@@ -1,2 +1,16 @@
-# Cloud-Cost-Control-Engine
-Developed an AWS-based Cloud Cost Control Engine that monitors resource usage, detects unused services, and implements cost optimization strategies to reduce cloud expenses and improve efficiency.
+# Cloud Cost Control Engine (AWS FinOps Project)
+
+## 📌 Description
+This project helps monitor and control cloud costs by identifying unused resources and optimizing AWS usage.
+
+## 🚀 Features
+- Cost monitoring
+- Resource tracking
+- Alerts for high usage
+- Optimization recommendations
+
+## 🛠️ Technologies
+- AWS (EC2, S3, CloudWatch, Lambda)
+
+## 🎯 Outcome
+Reduced unnecessary cloud expenses and improved resource efficiency.
