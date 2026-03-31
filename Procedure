@@ -1,0 +1,103 @@
+🔹 Step 1: Create AWS Resources
+Launch EC2 instance
+Create S3 bucket (projectbucketfinops)
+
+👉 These are the resources you monitor
+
+🔹 Step 2: Create DynamoDB Table
+Service: DynamoDB
+Table name: FinOpsProject
+
+Attributes:
+
+Resource ID
+Action
+Timestamp
+
+👉 Stores all actions done by the system
+
+🔹 Step 3: Create SNS Topic
+Service: Amazon SNS
+Topic name: finops-alerts
+
+Add subscription:
+
+Protocol: Email
+Enter your email → confirm
+
+👉 Used to send:
+
+Cost alerts
+Reports
+Suggestions
+🔹 Step 4: Create Lambda Function
+Service: AWS Lambda
+Name: finops-governance-engine
+Runtime: Python
+
+👉 This is the main processing unit
+
+🔹 Step 5: Write Lambda Logic
+
+Inside Lambda, implement:
+
+Check EC2 instances
+Stop idle instances
+Read S3 usage
+Analyze cost using Cost Explorer
+Generate recommendations
+Store logs in DynamoDB
+Send alerts using SNS
+
+👉 This step handles:
+
+EC2 auto-stop
+S3 analysis
+Cost checking
+Recommendations
+🔹 Step 6: Enable Cost Explorer
+Open AWS Cost Explorer
+Enable it
+
+👉 Used to:
+
+Check service-wise cost
+Detect high usage
+🔹 Step 7: Create EventBridge Rule
+Service: Amazon EventBridge
+Create rule (Scheduled)
+
+Example:
+
+Run every day / every hour
+
+👉 Automates the execution
+
+🔹 Step 8: Connect EventBridge to Lambda
+Select your Lambda as target
+
+👉 Now Lambda runs automatically
+
+🔹 Step 9: System Execution Flow
+
+👉
+EventBridge triggers Lambda
+
+Lambda:
+
+Checks EC2 → stops unused
+Reads S3 usage
+Gets cost data
+Stores logs in DynamoDB
+Sends alerts using SNS
+🔹 Step 10: Verify Output
+
+Check:
+
+EC2 stopped if unused ✅
+Logs in DynamoDB ✅
+Email alerts received ✅
+🔹 Step 11: Final Result
+Reduced cloud cost 💸
+Automated monitoring
+Smart resource control
